@@ -13,9 +13,9 @@ public class Product extends BaseModel {
 //    private Category category;
 //    private Boolean isSaleEligible;
 
-    private String title;
+    private String name;
     private String description;
-    private String category;
+    private Category category;
     private Double price;
-    private String image;
+    private String imageUrl;
 }
