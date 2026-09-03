@@ -7,6 +7,7 @@ import com.example.productcatalogservice.models.Category;
 import com.example.productcatalogservice.models.Product;
 import com.example.productcatalogservice.services.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 public class ProductController {
 
     @Autowired
+    @Qualifier("storageProductService")
     private IProductService productService;
 //    public ProductController(IProductService productService) {
 //        this.productService = productService;
@@ -60,6 +62,14 @@ public class ProductController {
         }
         ProductDto productDto= from(product);
         return new ResponseEntity<>(productDto, HttpStatus.OK);
+    }
+
+    @PostMapping("/products")
+    public ResponseEntity<ProductDto> createProduct(@RequestBody ProductDto productDto) {
+        Product product=from(productDto);
+        Product output=productService.createProduct(product);
+        ProductDto resp=from(output);
+        return new ResponseEntity<>(resp, HttpStatus.CREATED);
     }
 
     @PutMapping("/products/{id}")
