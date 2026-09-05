@@ -24,15 +24,15 @@ public class ProductController {
 //        this.productService = productService;
 //    }
 
-   // @GetMapping
-    public ProductDto getProductDetailsBy(@PathVariable("id") Long productId){
-//        ProductDto productDto = new ProductDto();
-//        productDto.setId(productId);
-//        productDto.setName("Wizard Phone");
-//        return productDto;
-        Product product = productService.getProductDetailsById(productId);
-        return null;
-    }
+//    @GetMapping("products/{id}")
+//    public ProductDto getProductDetailsBy(@PathVariable("id") Long productId){
+////        ProductDto productDto = new ProductDto();
+////        productDto.setId(productId);
+////        productDto.setName("Wizard Phone");
+////        return productDto;
+//        Product product = productService.getProductDetailsById(productId);
+//        return null;
+//    }
 
 //    @GetMapping("products/{id}")
 //    public Product getProductDetailsById(@PathVariable("id") Long productId){
