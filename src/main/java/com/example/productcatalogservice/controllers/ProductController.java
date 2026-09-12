@@ -50,9 +50,11 @@ public class ProductController {
     //        productDto.setId(productId);
     //        productDto.setName("Wizard Phone");
     //        return productDto;
-        if(productId<=0L){
+        if(productId==0L){
 //            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
             throw new IllegalArgumentException("Pls pass id > 0");
+        }else if(productId < 0L){
+            throw new IllegalAccessException("Invalid product Id");
         }
 
         Product product = productService.getProductDetailsById(productId);
