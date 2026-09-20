@@ -3,5 +3,10 @@ package com.userauthservice.userauthservice.repos;
 import com.userauthservice.userauthservice.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepo extends JpaRepository<User,Long> {
+import java.util.Optional;
+
+    public interface UserRepo extends JpaRepository<User,Long> {
+    Optional<User> findByEmail(String email);
+    Optional<User> findByphoneNumber(String phoneNumber);
+//    Optional<User> findByEmailAndPassword(String email,String password);
 }
