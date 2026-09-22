@@ -1,0 +1,41 @@
+{
+"query" : "laptop",
+"pageSize" : 2,
+"pageNumber" : 0
+} --2 products output
+
+{
+"query" : "laptop",
+"pageSize" : 2,
+"pageNumber" : 1
+} --Next 2 products output
+
+{
+"query" : "laptop",
+"pageSize" : 2,
+"pageNumber" : 2
+} --No data
+
+{
+"query" : "laptop",
+"pageSize" : 1,
+"pageNumber" : 2
+} -- 3 rd product will get output
+
+{
+"query" : "laptop",
+"pageSize" : 1,
+"pageNumber" : 3
+} -- Last product is output
+
+{
+"query" : "laptop",
+"pageSize" : 1,
+"pageNumber" : 4
+} -- No output
+
+{
+"query" : "laptop",
+"pageSize" : -1,
+"pageNumber" : 4
+} --Page size must not be less than one
