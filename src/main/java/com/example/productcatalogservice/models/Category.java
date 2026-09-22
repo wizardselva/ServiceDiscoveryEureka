@@ -18,6 +18,7 @@ import java.util.List;
 public class Category extends BaseModel{
     private String name;
     private String description;
+    @JsonBackReference
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
 //    @OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
     @Fetch(FetchMode.SELECT)
