@@ -57,6 +57,11 @@ public class ProductService implements IProductService {
         return null;
     }
 
+    @Override
+    public Product getProductBasedOnUserRole(Long productId, Long userId) {
+        return null;
+    }
+
     public <T> ResponseEntity<T> putForEntity(String url, @Nullable Object request,
                                                Class<T> responseType, Object... uriVariables) throws RestClientException {
         RestTemplate restTemplate = restTemplateBuilder.build();

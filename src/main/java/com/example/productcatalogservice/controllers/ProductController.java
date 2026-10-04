@@ -20,6 +20,14 @@ public class ProductController {
     @Autowired
     @Qualifier("storageProductService")
     private IProductService productService;
+
+    @GetMapping("/products/{productId}/users/{userId}")
+    public ProductDto getProductDetailsBasedOnUserRole(@PathVariable Long productId,
+                                                       @PathVariable Long userId) {
+        Product product=productService.getProductBasedOnUserRole(productId,userId);
+        return from(product);
+    }
+
 //    public ProductController(IProductService productService) {
 //        this.productService = productService;
 //    }
@@ -120,4 +128,6 @@ public class ProductController {
         }
         return productDto;
     }
+
+
 }
