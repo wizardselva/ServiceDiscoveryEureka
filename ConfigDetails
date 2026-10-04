@@ -1,0 +1,23 @@
+Lombok, devtools, springweb -> Dependencies
+
+ServiceDiscovery -> Project
+
+spring-cloud-starter-netflix-eureka-server -> 4.3.1
+
+@EnableEurekaServer
+
+server.port=8761
+eureka.client.fetch-registry=false
+eureka.client.register-with-eureka=false
+
+3.5.3 spring version
+
+spring-cloud-starter-netflix-eureka-client -> 4.1.4 =>  Added in product service, userAuth service
+
+app.properties(prod,userAuth)
+eureka.client.fetch-registry=true
+eureka.client.register-with-eureka=true
+
+https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-eureka-server.html
+
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
