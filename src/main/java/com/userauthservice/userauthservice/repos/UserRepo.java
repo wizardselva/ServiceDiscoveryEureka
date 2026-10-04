@@ -9,4 +9,5 @@ import java.util.Optional;
     Optional<User> findByEmail(String email);
     Optional<User> findByphoneNumber(String phoneNumber);
 //    Optional<User> findByEmailAndPassword(String email,String password);
+        Optional<User> findById(Long id);
 }
